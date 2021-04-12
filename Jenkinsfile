@@ -7,9 +7,6 @@ pipeline {
         }
     }
 	
-    options {
-	
-	}
 	
 
     stages {
