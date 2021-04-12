@@ -3,9 +3,9 @@ pipeline {
   //agent any
   agent {
         node {
-            	label ""
+            	label: ""
 		def path = ${WORKSPACE}
-		customWorkspace "${path}\\${BUILD_NUMBER}"
+		customWorkspace: "${path}\\${BUILD_NUMBER}"
 		
         }
     }
