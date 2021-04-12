@@ -1,18 +1,19 @@
 pipeline {
 
-   //agent any
-   agent {
-    node {
-      label any
-      customWorkspace '${WORKSPACE}/${JOB_NAME}/${BUILD_NUMBER}'
-    }
-   }	
+   agent any
+   //agent {
+    //node {
+     // label any
+      //customWorkspace '${WORKSPACE}/${JOB_NAME}/${BUILD_NUMBER}'
+    //}
+   //}	
 	
 
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
+		customWorkspace '${WORKSPACE}/${JOB_NAME}/${BUILD_NUMBER}'    
 		powershell '''cd "D:\\cis\\Source\\CORE\\LIVE"
 				rebar compile'''
 
