@@ -1,10 +1,14 @@
 pipeline {
 
-   //agent any
-    agent any
+  agent {
+        label {
+            label ""
+		customWorkspace '${WORKSPACE}/${JOB_NAME}/${BUILD_NUMBER}'
+        }
+    }
 	
     options {
-	customWorkspace '${WORKSPACE}/${JOB_NAME}/${BUILD_NUMBER}'
+	
 	}
 	
 
