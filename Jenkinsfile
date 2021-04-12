@@ -10,7 +10,7 @@ pipeline {
             steps {
                 echo 'Building..' 
 		echo "${WORKSPACE}"
-		echo "${PROJECT_NAME} - Build # ${BUILD_NUMBER}"
+		
 		   
 		powershell '''cd "D:\\cis\\Source\\CORE\\LIVE"
 				rebar compile'''
