@@ -1,17 +1,10 @@
 pipeline {
 
-  //agent any
-  agent {
-        node ''
-            	
-		def path = ${WORKSPACE}
-		customWorkspace "${path}\\${BUILD_NUMBER}"
-		
-        
-    }
+  
+
 	
 	
-    //agent any
+    agent any
     stages {
         stage('Build') {
 		
