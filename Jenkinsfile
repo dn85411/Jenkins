@@ -1,19 +1,18 @@
 pipeline {
 
-  agent {
-        label {
-            label ''
-		customWorkspace '${WORKSPACE}/${JOB_NAME}/${BUILD_NUMBER}'
-        }
-    }
+  //agent {
+        //label {
+            //label ''
+		//customWorkspace '${WORKSPACE}/${JOB_NAME}/${BUILD_NUMBER}'
+        //}
+    //}
 	
 	
-
+    agent any
     stages {
         stage('Build') {
             steps {
                 echo 'Building..' 
-		checkout scm
 		powershell '''cd "D:\\cis\\Source\\CORE\\LIVE"
 				rebar compile'''
 
