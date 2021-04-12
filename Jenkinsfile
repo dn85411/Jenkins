@@ -11,6 +11,7 @@ pipeline {
 		powershell '''cd "D:\\cis\\Source\\CORE\\LIVE"
 				rebar compile'''
 		bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\Common7\\IDE\\devenv.com" "D:\\cis\\Source\\Master.sln" /Build "Release|x64"'
+		bat '\"${tool 'MSBuild-Default'}\" D:\cis\Source\Master.sln /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}'
 	    }
         }
         stage('Test') {
