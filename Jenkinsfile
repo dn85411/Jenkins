@@ -3,6 +3,8 @@ pipeline {
   agent {
         node {
             label ''
+		def path = ${WORKSPACE}
+		customWorkspace "${path}\\${BUILD_NUMBER}"
 		
         }
     }
