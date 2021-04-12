@@ -1,12 +1,11 @@
 pipeline {
 
-   agent any
-   //agent {
-    //node {
-     // label any
-      //customWorkspace '${WORKSPACE}/${JOB_NAME}/${BUILD_NUMBER}'
-    //}
-   //}	
+   //agent any
+   agent {
+    node {
+      customWorkspace '${WORKSPACE}/${JOB_NAME}/${BUILD_NUMBER}'
+    }
+   }	
 	
 
     stages {
