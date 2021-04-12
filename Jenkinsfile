@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..' 
-		echo '${WORKSPACE}'
+		echo "${WORKSPACE}"
 		powershell '''cd "D:\\cis\\Source\\CORE\\LIVE"
 				rebar compile'''
 		 
