@@ -1,10 +1,8 @@
 pipeline {
 
    //agent any
-   agent {
-    node {
+   agent any {
       customWorkspace '${WORKSPACE}/${JOB_NAME}/${BUILD_NUMBER}'
-    }
    }	
 	
 
