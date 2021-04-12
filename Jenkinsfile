@@ -1,11 +1,11 @@
 pipeline {
 
-  //agent {
-        //label {
-            //label ''
-		//customWorkspace '${WORKSPACE}/${JOB_NAME}/${BUILD_NUMBER}'
-        //}
-    //}
+  agent {
+        node {
+            label ''
+		customWorkspace '${WORKSPACE}/${JOB_NAME}/${BUILD_NUMBER}'
+        }
+    }
 	
 	
     agent any
