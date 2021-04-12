@@ -11,8 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
-		customWorkspace '${WORKSPACE}/${JOB_NAME}/${BUILD_NUMBER}'    
+                echo 'Building..'    
 		powershell '''cd "D:\\cis\\Source\\CORE\\LIVE"
 				rebar compile'''
 
