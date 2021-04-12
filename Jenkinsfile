@@ -7,13 +7,7 @@ pipeline {
     agent any
     stages {
         stage('Build') {
-		    	 node {
-			   
-               label " "
-	       def path = ${WORKSPACE}
-               customWorkspace "${path}\\${BUILD_NUMBER}"
-	 }
-		
+
             steps {
 
                 echo 'Building..' 
