@@ -3,7 +3,7 @@ pipeline {
    //agent any
    agent {
     node {
-      label 'node(s)-defined-label'
+      label any
       customWorkspace '${WORKSPACE}/${JOB_NAME}/${BUILD_NUMBER}'
     }
    }	
