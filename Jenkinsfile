@@ -1,9 +1,11 @@
 pipeline {
 
    //agent any
-   agent any {
-      customWorkspace '${WORKSPACE}/${JOB_NAME}/${BUILD_NUMBER}'
-   }	
+    agent any
+	
+    options {
+	customWorkspace '${WORKSPACE}/${JOB_NAME}/${BUILD_NUMBER}'
+	}
 	
 
     stages {
