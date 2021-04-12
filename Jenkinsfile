@@ -12,7 +12,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'    
+                echo 'Building..' 
+		checkout scm
 		powershell '''cd "D:\\cis\\Source\\CORE\\LIVE"
 				rebar compile'''
 
