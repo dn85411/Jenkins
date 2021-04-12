@@ -1,20 +1,21 @@
 pipeline {
 
-  agent {
-
-            label ""
-	    def path = ${WORKSPACE}
-	    customWorkspace "${path}\\${BUILD_NUMBER}"		
-
-    }
+  agent any
 	
 	
     //agent any
     stages {
         stage('Build') {
+		    node {
+			    echo "${PROJECT_NAME} - Build # ${BUILD_NUMBER}"
+        label ''
+	def path = ${WORKSPACE}
+        customWorkspace "${path}\\${BUILD_NUMBER}"
+    }
             steps {
                 echo 'Building..' 
 		echo "${WORKSPACE}"
+		   
 		powershell '''cd "D:\\cis\\Source\\CORE\\LIVE"
 				rebar compile'''
 		 
