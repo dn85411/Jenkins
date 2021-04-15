@@ -26,7 +26,7 @@ pipeline {
 				rebar compile'''
 		 
 
-		bat "\"${tool 'MSBuild-Default'}\\MSBuild.exe\" D:\\cis\\Source\\Master.sln /p:ProductVersion=1.0.0.${env.BUILD_NUMBER}"
+		bat "\"${tool 'MSBuild-Default'}\\MSBuild.exe\" D:\\cis\\Source\\Master.sln "
 		bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\Common7\\IDE\\devenv.com" "D:\\cis\\Source\\Master.sln" /Build "Release|x64"'
 		
 	    }
