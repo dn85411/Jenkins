@@ -2,7 +2,8 @@ pipeline {
 	
    agent {
     node {
-      	label 'master'	  
+      	label 'master'
+	    
 	    customWorkspace "D:\\CIS_JENKINS\\${JOB_NAME}\\${BUILD_NUMBER}"
         }
      }
@@ -15,6 +16,8 @@ pipeline {
 
                 echo 'Building..' 
 		echo "${WORKSPACE}"
+		def tmsp = ${env.BUILD_ID} + ${env.BUILD_NUMBER}
+		echo "${tmsp}"
 		checkout scm
 		
 		   
