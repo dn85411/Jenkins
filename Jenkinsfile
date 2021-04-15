@@ -3,7 +3,7 @@ pipeline {
    agent {
     node {
       	label 'master'	  
-	    customWorkspace "${env.WORKSPACE}\\${JOB_NAME}\\${BUILD_NUMBER}"
+	    customWorkspace "D:\\CIS_JENKINS\\${JOB_NAME}\\${BUILD_NUMBER}"
         }
      }
     stages {
@@ -38,5 +38,14 @@ pipeline {
             }
         }
     }
+	post {
+  always {
+    def path =  "D:\\CIS_JENKINS\\${JOB_NAME}\\${BUILD_NUMBER}@tmp"
+    cleanWs()
+    dir(path) {
+      deleteDir()
+    }
+  }
+}
 
 }
