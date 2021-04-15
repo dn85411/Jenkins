@@ -3,7 +3,7 @@ pipeline {
    agent {
     node {
       	label 'master'	  
-      	customWorkspace "D:\\CIS_Jenkins\\${JOB_NAME}\\${BUILD_NUMBER}"
+	    customWorkspace "${env.WORKSPACE}\\${JOB_NAME}\\${BUILD_NUMBER}"
         }
      }
     stages {
@@ -38,4 +38,5 @@ pipeline {
             }
         }
     }
+
 }
