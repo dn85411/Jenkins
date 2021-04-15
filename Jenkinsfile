@@ -40,9 +40,9 @@ pipeline {
     }
 	post {
   always {
-    def path =  "D:\\CIS_JENKINS\\${JOB_NAME}\\${BUILD_NUMBER}@tmp"
+    
     cleanWs()
-    dir(path) {
+    dir("D:\\CIS_JENKINS\\${JOB_NAME}\\${BUILD_NUMBER}@tmp") {
       deleteDir()
     }
   }
