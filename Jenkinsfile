@@ -9,9 +9,12 @@ pipeline {
         stage('Build') {
 
             steps {
+		    
+		
 
                 echo 'Building..' 
 		echo "${WORKSPACE}"
+		checkout scm
 		
 		   
 		powershell '''cd "D:\\cis\\Source\\CORE\\LIVE"
