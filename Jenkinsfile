@@ -4,7 +4,12 @@ pipeline {
 
 	
 	
-    agent any
+   agent {
+    node {
+      label 'master'
+      customWorkspace "${JENKINS_HOME}/workspace/${JOB_NAME}/${BUILD_NUMBER}"
+        }
+     }
     stages {
         stage('Build') {
 
