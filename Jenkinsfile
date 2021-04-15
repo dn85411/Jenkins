@@ -1,12 +1,14 @@
 def tmsp = "${BUILD_ID}" 
 def buildnum = "${BUILD_NUMBER}"
+def path = "D:\\CIS_JENKINS\\${JOB_NAME}\\${BUILD_NUMBER}"
+
 pipeline {
 	
    agent {
     node {
       	label 'master'
 	    
-	    customWorkspace "D:\\CIS_JENKINS\\${JOB_NAME}\\${BUILD_NUMBER}"
+	    customWorkspace "${path}"
         }
      }
     stages {
@@ -45,12 +47,10 @@ pipeline {
             }
         }
     }
-	post {
-  always {
-    
-    cleanWs()
-    dir("D:\\CIS_JENKINS\\${JOB_NAME}\\${BUILD_NUMBER}@tmp") {
-      deleteDir()
+  post {
+  	always {    
+	  dir("${path}@tmp") {
+      	  deleteDir()
     }
   }
 }
