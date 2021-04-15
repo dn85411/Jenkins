@@ -1,3 +1,5 @@
+def tmsp = "${BUILD_ID}" 
+def buildnum = "${BUILD_NUMBER}"
 pipeline {
 	
    agent {
@@ -16,8 +18,10 @@ pipeline {
 
                 echo 'Building..' 
 		echo "${WORKSPACE}"
-		def tmsp = ${env.BUILD_ID} + ${env.BUILD_NUMBER}
+		    echo "{tmsp}"
+		
 		echo "${tmsp}"
+		echo "${buildnum}"
 		checkout scm
 		
 		   
