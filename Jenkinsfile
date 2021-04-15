@@ -2,9 +2,8 @@ pipeline {
 	
    agent {
     node {
-      label 'master'
-	def path = ${WORKSPACE} 	  
-      	customWorkspace "${path}/${JOB_NAME}/${BUILD_NUMBER}"
+      	label 'master'	  
+      	customWorkspace "${WORKSPACE}/${JOB_NAME}/${BUILD_NUMBER}"
         }
      }
     stages {
