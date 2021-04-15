@@ -1,13 +1,10 @@
 pipeline {
-
-  
-
-	
 	
    agent {
     node {
       label 'master'
-      customWorkspace "${JENKINS_HOME}/workspace/${JOB_NAME}/${BUILD_NUMBER}"
+	def path = ${WORKSPACE} 	  
+      	customWorkspace "${path}/${JOB_NAME}/${BUILD_NUMBER}"
         }
      }
     stages {
