@@ -24,7 +24,7 @@ pipeline {
 				   
 
 		bat '''Desktop\\vs-bash-console.bat
-			make prod'''
+			'''
 
 		bat "\"${tool 'MSBuild-Default'}\\MSBuild.exe\" D:\\CIS_Source\\Source\\Master.sln "
 		bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\Common7\\IDE\\devenv.com" "D:\\CIS_Source\\Source\\Master.sln" /Build "Release" /Project "D:\\CIS_Source\\Source\\Install\\AIM PACIS SCU Install\\AIM PACIS SCU Install.vdproj"'
