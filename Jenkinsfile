@@ -22,13 +22,14 @@ pipeline {
 		echo "${buildnum}"
 		checkout scm
 				   
-		powershell '''cd "D:\\cis\\Source\\CORE\\LIVE"
-				rebar compile'''
+		powershell '''cd D:\\CIS_Source\\Source\\CORE\\LIVE
+				D:\\CIS_Source\\Source\\CORE\\LIVE\\vs-bash-console.bat
+				make prod'''
 		 
 
-		bat "\"${tool 'MSBuild-Default'}\\MSBuild.exe\" D:\\cis\\Source\\Master.sln "
-		bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\Common7\\IDE\\devenv.com" "D:\\cis\\Source\\Master.sln" /Build "Release" /Project "D:\\cis\\Source\\Install\\AIM PACIS SCU Install\\AIM PACIS SCU Install.vdproj"'
-		bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\Common7\\IDE\\devenv.com" "D:\\cis\\Source\\Master.sln" /Build "Release" /Project "D:\\cis\\Source\\Install\\AIM PACIS Server Install\\AIM PACIS Server Install.vdproj"'
+		bat "\"${tool 'MSBuild-Default'}\\MSBuild.exe\" D:\\CIS_Source\\Source\\Master.sln "
+		bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\Common7\\IDE\\devenv.com" "D:\\CIS_Source\\Source\\Master.sln" /Build "Release" /Project "D:\\cis\\Source\\Install\\AIM PACIS SCU Install\\AIM PACIS SCU Install.vdproj"'
+		bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\Common7\\IDE\\devenv.com" "D:\\CIS_Source\\Source\\Master.sln" /Build "Release" /Project "D:\\cis\\Source\\Install\\AIM PACIS Server Install\\AIM PACIS Server Install.vdproj"'
 	    }
         }
         stage('Test') {
