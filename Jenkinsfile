@@ -26,7 +26,7 @@ pipeline {
 		bat '''cd D:\\CIS_Source\\Source\\CORE\\LIVE
 		"C:\\Program Files\\Git\\bin\\bash.exe" -c "make prod"'''
 
-		bat "\"${tool 'MSBuild-Default'}\\MSBuild.exe\" D:\\CIS_Source\\Source\\Master.sln /t:Clean "
+		bat "\"${tool 'MSBuild-Default'}\\MSBuild.exe\" D:\\CIS_Source\\Source\\Master.sln /t:Clean /p:Configuration=Release /p:Platform=x64 "
 		bat "\"${tool 'MSBuild-Default'}\\MSBuild.exe\" D:\\CIS_Source\\Source\\Master.sln  /t:Build /p:Configuration=Release /p:Platform=x64 "
 	    }
         }
