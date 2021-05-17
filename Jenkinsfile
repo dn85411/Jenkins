@@ -22,9 +22,9 @@ pipeline {
 		echo "${buildnum}"
 		checkout scm
 				   
-		bat 'cd D:\\CIS_Source\\Source\\CORE\\LIVE'
 		bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Auxiliary\\Build\\vcvarsall.bat" x64'
-		bat '"C:\\Program Files\\Git\\bin\\bash.exe" -c "make prod"'
+		bat '''cd D:\\CIS_Source\\Source\\CORE\\LIVE
+		"C:\\Program Files\\Git\\bin\\bash.exe" -c "make prod"'''
 
 		bat "\"${tool 'MSBuild-Default'}\\MSBuild.exe\" D:\\CIS_Source\\Source\\Master.sln /t:Clean "
 		bat "\"${tool 'MSBuild-Default'}\\MSBuild.exe\" D:\\CIS_Source\\Source\\Master.sln  /t:Build /p:Configuration=Release /p:Platform=x64 "
