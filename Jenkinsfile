@@ -22,7 +22,7 @@ pipeline {
 		echo "${buildnum}"
 		checkout scm
 				   
-		bat '''cd D:\\\\CIS_Source\\\\Source\\\\CORE\\\\LIVE
+		bat '''cd D:\\CIS_Source\\Source\\CORE\\LIVE
 		"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\VC\\Auxiliary\\Build\\vcvarsall.bat" x64
 		"C:\\Program Files\\Git\\bin\\bash.exe" -c make prod'''
 
