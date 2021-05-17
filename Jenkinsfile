@@ -28,6 +28,8 @@ pipeline {
 
 		bat "\"${tool 'MSBuild-Default'}\\MSBuild.exe\" D:\\CIS_Source\\Source\\Master.sln /t:Clean /p:Configuration=Release /p:Platform=x64 "
 		bat "\"${tool 'MSBuild-Default'}\\MSBuild.exe\" D:\\CIS_Source\\Source\\Master.sln  /t:Build /p:Configuration=Release /p:Platform=x64 "
+		bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\Common7\\IDE\\devenv.com" "D:\\CIS_Source\\Source\\Master.sln" /Build "Release" /Project "D:\\CIS_Source\\Source\\Install\\AIM PACIS SCU Install\\AIM PACIS SCU Install.vdproj"'
+		bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\Common7\\IDE\\devenv.com" "D:\\CIS_Source\\Source\\Master.sln" /Build "Release" /Project "D:\\CIS_Source\\Source\\Install\\AIM PACIS Server Install\\AIM PACIS Server Install.vdproj"'
 	    }
         }
         stage('Test') {
