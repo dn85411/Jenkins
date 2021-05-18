@@ -26,7 +26,7 @@ pipeline {
 		bat '''cd D:\\CIS_Source\\Source\\CORE\\LIVE
 		"C:\\Program Files\\Git\\bin\\bash.exe" -c "make prod"'''
 
-		bat '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Professional\\Common7\\IDE\\devenv.com" "D:\\CIS_Source\\Source\\Master.sln" /Rebuild "Release|x64"
+		bat '"C:\\\\Program Files (x86)\\\\Microsoft Visual Studio\\\\2019\\\\Professional\\\\Common7\\\\IDE\\\\devenv.com" "D:\\\\CIS_Source\\\\Source\\\\Master.sln" /Rebuild "Release|x64"'
 	    }
         }
         stage('Test') {
